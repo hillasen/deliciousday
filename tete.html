@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력 생성</title>
+    <style>
+        #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+div.day {
+    width: 120px;   /* 가로 크기 3배 */
+    height: 180px;  /* 세로 크기 3배 (가로의 1.5배) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+div.day-header {
+    font-weight: bold;
+    background-color: #ddd;
+    height: 180px;  /* 요일 헤더의 세로 크기를 일자와 동일하게 */
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <label for="year">년: </label>
+        <input type="number" id="year">
+        <label for="month">월: </label>
+        <input type="number" id="month" min="1" max="12">
+        <button onclick="generateCalendar()">달력 생성</button>
+    </div>
+    <div id="calendar"></div>
+
+    <script>
+        const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
+
+        function generateCalendar() {
+            const year = document.getElementById('year').value;
+            const month = document.getElementById('month').value;
+
+            const daysInMonth = new Date(year, month, 0).getDate();
+            const firstDay = new Date(year, month - 1, 1).getDay();
+
+            const calendarDiv = document.getElementById('calendar');
+            calendarDiv.innerHTML = '';
+
+            // 요일 헤더 추가
+            for (const dayName of WEEKDAYS) {
+                const dayHeaderDiv = document.createElement('div');
+                dayHeaderDiv.className = 'day day-header';
+                dayHeaderDiv.innerText = dayName;
+                calendarDiv.appendChild(dayHeaderDiv);
+            }
+
+            // 이전 달의 마지막 일자를 위한 공간 추가
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.className = 'day';
+                calendarDiv.appendChild(emptyDiv);
+            }
+
+            // 해당 월의 날짜 출력
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'day';
+                dayDiv.id = `${year}${String(month).padStart(2, '0')}${String(day).padStart(2, '0')}`;
+                dayDiv.innerText = day;
+                calendarDiv.appendChild(dayDiv);
+            }
+        }
+    </script>
+</body>
+</html>

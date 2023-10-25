@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>맛있는날</title>
+</head>
+<body>
+    <div class="container">
+        <h1>맛있는날</h1>
+        <h4>급식 분석 프로그램</h4>
+        <input type="text" id="schoolName" class="schoolName" placeholder="학교 이름을 입력하세요"/>
+        <input type="month" id="monthInput" style="width: 50%; margin-top: 20px;"/>
+        <div onclick="getSchoolJson();" class="finishButton" onkeypress="enterkey(event)">선택 완료</div>
+        <script type="text/javascript" src="index.js"></script>
+    </div>
+</body>

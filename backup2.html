@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥조아</title>
+    <style>
+        #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+div.day {
+    width: 200px;   /* 가로 크기 3배 */
+    height: 500px;  /* 세로 크기 3배 (가로의 1.5배) */
+    display: flex;
+    border: 1px solid black;
+}
+div.day-header {
+    font-weight: bold;
+    background-color: #ddd;
+    height: 180px;  /* 요일 헤더의 세로 크기를 일자와 동일하게 */
+}
+
+    </style>
+</head>
+<body>
+    <div id="calendar"></div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.datedata {
+    margin-top: 15px;
+    border-radius: 20px;
+    border-style: solid;
+    height: 250px;
+    margin-left: 10%;
+    align-self: center;
+    width:80%;
+    border-width: 1px;
+    border-color: black;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    height: 220px;
+    width: 10%;
+    float: left;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 90%;
+    height: 220px;
+    float: left;
+}
+
+body{
+    text-align: center;
+    font-family: 'Sunflower', sans-serif;
+}
